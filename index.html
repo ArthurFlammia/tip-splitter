@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tip Splitter</title>
+  <!-- Link to the external stylesheet in the css folder -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Tip Splitter</h1>
+    <p class="subtitle">Split the bill without the calculator fight.</p>
+
+    <!-- Each input has a label and an id so JavaScript can read its value -->
+    <label for="bill">Bill amount ($)</label>
+    <input type="number" id="bill" placeholder="e.g. 84.50" />
+
+    <label for="tip">Tip percentage (%)</label>
+    <input type="number" id="tip" placeholder="e.g. 18" />
+
+    <label for="people">Number of people</label>
+    <input type="number" id="people" placeholder="e.g. 4" />
+
+    <!-- The button runs the calculate function when clicked -->
+    <button id="calc-btn">Calculate</button>
+
+    <!-- Results get filled in here by JavaScript. Empty to start. -->
+    <div id="results" class="results"></div>
+  </main>
+
+  <!-- Link to the JavaScript file at the end so the HTML loads first -->
+  <script src="js/script.js"></script>
+</body>
+</html>
