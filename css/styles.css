@@ -22,63 +22,144 @@ h1 {
   margin-top: 0;
 }
 
-/* Grey subtitle under the title */
-.subtitle {
+/* Small grey line under the title */
+.tagline {
   color: #6a737d;
-  margin-bottom: 25px;
+  margin-top: 0;
+  margin-bottom: 24px;
 }
 
-/* Bold dark labels above each input */
-label {
+/* Each label + input pair */
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
   display: block;
+  margin-bottom: 6px;
   font-weight: bold;
   color: #24292e;
-  margin-top: 18px;
-  margin-bottom: 6px;
 }
 
-/* Text inputs: full width with a light border */
-input {
+.field input {
   width: 100%;
-  padding: 12px;
+  box-sizing: border-box; /* so padding doesn't push the width past the card */
+  padding: 10px;
+  font-size: 16px;
   border: 1px solid #d1d5da;
   border-radius: 8px;
-  box-sizing: border-box;
-  font-size: 16px;
 }
 
-/* Shared button styling */
+/* Row that holds the Calculate and Reset buttons */
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* Buttons share a base look */
 button {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 18px;
-}
-
-/* Blue Calculate button */
-#calc-button {
   background-color: #2f6b85;
   color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-/* Darker blue when hovering over Calculate */
-#calc-button:hover {
-  background-color: #245468;
+button:hover {
+  background-color: #25566b; /* a little darker on hover for feedback */
 }
 
-/* Grey Reset button so it looks different from Calculate */
-#reset-button {
-  background-color: #e1e4e8;
+/* The lighter "secondary" buttons (Reset, Clear history) */
+.secondary {
+  background-color: #eef1f5;
+  color: #2f6b85;
+  border: 1px solid #cdd6dd;
+}
+
+.secondary:hover {
+  background-color: #e2e8ee;
+}
+
+.small {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+/* The current-result box */
+.results {
+  margin-top: 20px;
+  padding: 14px;
+  background-color: #f5f8fa;
+  border-radius: 8px;
+  white-space: pre-line; /* lets the \n line breaks from JS show as new lines */
+  min-height: 22px;
   color: #24292e;
 }
 
-/* Results area. pre-line makes the \n line breaks in the text show up */
-#results {
-  margin-top: 25px;
-  color: #24292e;
+/* ===== HISTORY SECTION ===== */
+.history-section {
+  margin-top: 28px;
+  border-top: 1px solid #e1e4e8;
+  padding-top: 20px;
+}
+
+.history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.history-header h2 {
+  color: #2f6b85;
   font-size: 18px;
-  white-space: pre-line;
+  margin: 0;
+}
+
+/* The derived session total line */
+.summary {
+  color: #6a737d;
+  font-size: 14px;
+  margin: 10px 0 14px 0;
+}
+
+/* The saved-splits list */
+#history-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#history-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background-color: #f5f8fa;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  color: #24292e;
+}
+
+/* The greyed-out "nothing saved yet" message */
+#history-list li.empty {
+  color: #959da5;
+  background-color: transparent;
+  padding-left: 0;
+  justify-content: flex-start;
+}
+
+/* Per-row remove button */
+.remove-btn {
+  background-color: transparent;
+  color: #b62324;
+  border: 1px solid #e6c3c3;
+  padding: 4px 10px;
+  font-size: 13px;
+}
+
+.remove-btn:hover {
+  background-color: #fbeaea;
 }
