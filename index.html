@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <!-- viewport meta makes the page work on phone screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tip Splitter</title>
-  <!-- Link to the external stylesheet in the css folder -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- link to the external stylesheet inside the css folder -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <main class="container">
+  <div class="container">
     <h1>Tip Splitter</h1>
     <p class="subtitle">Split the bill without the calculator fight.</p>
 
-    <!-- Each input has a label and an id so JavaScript can read its value -->
-    <label for="bill">Bill amount ($)</label>
-    <input type="number" id="bill" placeholder="e.g. 84.50" />
+    <!-- Bill amount input -->
+    <label for="bill-amount">Bill amount ($)</label>
+    <input type="number" id="bill-amount" placeholder="e.g. 84.50">
 
-    <label for="tip">Tip percentage (%)</label>
-    <input type="number" id="tip" placeholder="e.g. 18" />
+    <!-- Tip percentage input -->
+    <label for="tip-percent">Tip percentage (%)</label>
+    <input type="number" id="tip-percent" placeholder="e.g. 18">
 
-    <label for="people">Number of people</label>
-    <input type="number" id="people" placeholder="e.g. 4" />
+    <!-- Number of people input -->
+    <label for="num-people">Number of people</label>
+    <input type="number" id="num-people" placeholder="e.g. 4">
 
-    <!-- The button runs the calculate function when clicked -->
-    <button id="calc-btn">Calculate</button>
+    <!-- Calculate runs the math, Reset clears everything -->
+    <button id="calc-button">Calculate</button>
+    <button id="reset-button">Reset</button>
 
-    <!-- Results get filled in here by JavaScript. Empty to start. -->
-    <div id="results" class="results"></div>
-  </main>
+    <!-- The results box. Starts empty, filled in by JavaScript -->
+    <div id="results"></div>
+  </div>
 
-  <!-- Link to the JavaScript file at the end so the HTML loads first -->
+  <!-- link to the external JavaScript inside the js folder -->
   <script src="js/script.js"></script>
 </body>
 </html>
